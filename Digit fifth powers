@@ -1,0 +1,23 @@
+import java.math.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+       for(int i=2;i<1000000;i++)
+       {
+           int s=0;
+           while(i!=0)
+           {
+               int r=i%10;
+               int p=(int)Math.pow(r,5);
+               s=s+p;
+               i=i/10;
+           }
+           if(s==i)
+           {
+               System.out.println(s);
+           }
+       }
+    }
+    
+}
