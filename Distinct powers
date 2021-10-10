@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+import java.math.BigInteger;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        ArrayList distinctTerms = new ArrayList();
+        BigInteger temp;
+       for(int a=2;a<100;a++)
+       {
+           for(int b=2;b<100;b++)
+           {
+               temp = BigInteger.valueOf(a).pow(b);
+           }
+           if(!distinctTerms.contains(temp)) {
+          distinctTerms.add(temp);
+       }
+       System.out.println(distinctTerms.size());
+    }
+    }
+}
