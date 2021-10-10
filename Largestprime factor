@@ -1,0 +1,24 @@
+public class Main
+{
+    public static void main(String[] args)
+    {
+        long Num=600851475143L;
+        long largestFact=0;
+        int c=2;
+        while(c*c<=Num)
+        {
+            if(Num%c==0)
+            {
+                Num=Num/c;
+                largestFact=c;
+            }
+            else
+            c++;
+        }
+    if(Num>largestFact)
+    {
+        largestFact=Num;
+    }
+    System.out.println(largestFact);
+    }
+}
