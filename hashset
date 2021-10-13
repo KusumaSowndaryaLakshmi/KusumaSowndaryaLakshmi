@@ -1,0 +1,37 @@
+package hcl;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+public class Example2 {
+	String country;
+	 Set s;
+	public Set storeCountryName(String CountryName)
+	{
+		Set s=new HashSet();
+		s.add(CountryName);
+		return s;
+	}
+	public void retrieveCountry(String CountryName,Set s)
+	{
+		if(s.contains(CountryName))
+		{
+			System.out.println(CountryName);
+		}
+		else
+		{
+			System.out.println("null");
+		}
+	}
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the country name");
+		String Country=s.next();
+		Example2 e=new Example2();
+		Set j=e.storeCountryName(Country);
+		System.out.println(e.storeCountryName(Country));
+		System.out.println("enter the country name to search");
+		String i=s.next();
+		e.retrieveCountry(i,j);
+	}
+}
