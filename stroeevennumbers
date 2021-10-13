@@ -38,4 +38,16 @@ public class Example {
 			System.out.println("zero");
 		}
 	}
+	public static void main(String[] args)
+	{
+		Example s=new Example();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the no of elements");
+		int n=sc.nextInt();
+		List y=s.storeEvenNumbers(n);
+		System.out.println(s.printEvenNumber(y));
+		System.out.println("Enter the elements to search");
+		int h=sc.nextInt();
+		s.retrieveEvenNumber(h, y);
+	}
 }
