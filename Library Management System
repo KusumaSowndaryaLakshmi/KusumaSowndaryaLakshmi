@@ -1,0 +1,40 @@
+import java.text.ParseException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) throws ParseException
+	{
+		String[] a={"Lord Of the Flies by William Golding","The Walking Dead by Robert Kirkman","Animal by Encyclopedia","Forbes India Magazine","Wings Of Fires by Abdul Kalam"};
+		for(String s:a)
+		{
+		System.out.println(s);
+		}
+		User u=new User(null,null,0,0,0);
+		System.out.println("Display the books");
+		System.out.println("----------------------");
+		System.out.println("----------------------");
+		System.out.println("Please choose the books");
+		Scanner s=new Scanner(System.in);
+		String str=s.nextLine();
+		List<String> l=Arrays.asList(a);
+		if(l.contains(str))
+		{
+			System.out.println("Book is Available");
+			System.out.println("Please hold on,generating the bill..");
+			System.out.println("Enter the name:");
+			u.setName(s.nextLine());
+			System.out.println("Enter the email:");
+			u.setEmail(s.nextLine());
+			System.out.println("Enter the num:");
+			u.setMobilenumber(s.nextInt());
+			System.out.println("Enter the billno:");
+			u.setBillno(s.nextInt());
+			u.display();
+			}
+			else
+			{
+				System.out.println("Book is not Available");
+			}
+		}
+}
