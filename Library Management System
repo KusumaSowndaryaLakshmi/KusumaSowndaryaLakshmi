@@ -1,9 +1,14 @@
+import java.io.IOException;
+import java.sql.Date;
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Scanner;
 public class Main {
-	public static void main(String[] args) throws ParseException
+	public static void main(String[] args) throws IOException
 	{
 		String[] a={"Lord Of the Flies by William Golding","The Walking Dead by Robert Kirkman","Animal by Encyclopedia","Forbes India Magazine","Wings Of Fires by Abdul Kalam"};
 		for(String s:a)
@@ -11,6 +16,7 @@ public class Main {
 		System.out.println(s);
 		}
 		User u=new User(null,null,0,0,0);
+		Bill b=new Bill();
 		System.out.println("Display the books");
 		System.out.println("----------------------");
 		System.out.println("----------------------");
@@ -27,14 +33,88 @@ public class Main {
 			System.out.println("Enter the email:");
 			u.setEmail(s.nextLine());
 			System.out.println("Enter the num:");
-			u.setMobilenumber(s.nextInt());
-			System.out.println("Enter the billno:");
-			u.setBillno(s.nextInt());
+			u.setMobilenumber(s.nextLong());
+			System.out.println("USER DETAILS");
+			System.out.println("----------------------");
 			u.display();
-			}
+			System.out.println("HERE IS YOUR DETAILS");
+			System.out.println("----------------------");
+			b.display();
+		}
 			else
 			{
 				System.out.println("Book is not Available");
 			}
 		}
+	
+}
+USER CODE:
+public class User {
+String name;
+String email;
+long mobilenumber;
+int billno;
+int dateofissue;
+public User(String name,String email,int mobilenumber,int billno,int dateofissue)
+{
+	this.name=name;
+	this.email=email;
+	this.mobilenumber=mobilenumber;
+	this.billno=billno;
+	this.dateofissue=dateofissue;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
+public long getMobilenumber() {
+	return mobilenumber;
+}
+public void setMobilenumber(long mobilenumber) {
+	this.mobilenumber = mobilenumber;
+}
+public int getBillno() {
+	return billno;
+}
+public void setBillno(int billno) {
+	this.billno = billno;
+}
+public int getDateofissue() {
+	return dateofissue;
+}
+public void setDateofissue(int dateofissue) {
+	this.dateofissue = dateofissue;
+}
+public void display()
+{
+	System.out.println("Name:"+getName());
+	System.out.println("Email:"+getEmail());
+	System.out.println("MobileNumber:"+getMobilenumber());
+}
+}
+Bill CODE:
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+public class Bill {
+	public  void display() {
+	for(int i=1;i<=5;i++)
+	{
+	System.out.println("Bill Number:"+i);
+	break;
+	}
+	DateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
+	Calendar cal = Calendar.getInstance();
+	System.out.println("Date of issue : " + dateFormat.format(cal.getTime()));
+	System.out.println("Please return the book with in 15 days of purchase");
+}
 }
